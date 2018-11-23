@@ -3,12 +3,12 @@ class Player:
         self.name = name
         self.team = team
         self.position = position
-        self.image = image
         self.minutes = minutes
         self.expected_minutes = minutes
         self.stats = stats
         self.price = price
         self.proj_points = proj_points
+        self.image = image
     def get_name(self):
         return self.name
     def get_team(self):
