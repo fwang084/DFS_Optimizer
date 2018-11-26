@@ -1,8 +1,8 @@
 from Player import *
 from Team import *
 player_list=[]
-team_list=[Team('Hawks'), Team('Celtics'), Team('Nets'), Team('Hornets'), Team('Bulls'), Team('Cavaliers'),
-           Team('Mavericks'), Team('Nuggets'), Team('Pistons'), Team('Warriors'), Team('Rockets'), Team('Pacers'),
-           Team('Clippers'), Team('Lakers'), Team('Grizzlies'), Team('Heat'), Team('Bucks'), Team('Timberwolves'),
-           Team('Pelicans'), Team('Knicks'), Team('Thunder'), Team('Magic'), Team('76ers'), Team('Suns'),
-           Team('Trail Blazers'), Team('Kings'), Team('Spurs'), Team('Raptors'), Team('Jazz'), Team('Wizards')]
+team_list=[Team('ATL'), Team('BOS'), Team('BKN'), Team('CHA'), Team('CHI'), Team('CLE'),
+           Team('DAL'), Team('DEN'), Team('DET'), Team('GSW'), Team('HOU'), Team('IND'),
+           Team('LAC'), Team('LAL'), Team('MEM'), Team('MIA'), Team('MIL'), Team('MIN'),
+           Team('NOP'), Team('NYK'), Team('OKC'), Team('ORL'), Team('PHI'), Team('PHO'),
+           Team('POR'), Team('SAC'), Team('SAS'), Team('TOR'), Team('UTA'), Team('WAS')]
