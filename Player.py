@@ -6,7 +6,7 @@ class Player:
         self.avg_minutes = minutes
         self.expected_minutes = minutes
         self.avg_stats = stats
-        self.expected_stats = stats
+        self.proj_stats = stats
         self.price = 0
         self.proj_points = 0
         self.image = image
@@ -19,13 +19,13 @@ class Player:
     def set_position(self, position):
         self.position=position
     def get_expected_minutes(self):
-        return self.expected_minutes
+        return self.proj_minutes
     def set_minutes(self, proj_minutes):
-        self.expected_minutes = proj_minutes
+        self.proj_minutes = proj_minutes
     def get_stats(self):
         return self.expected_stats
     def set_stats(self, proj_stats):
-        self.expected_stats = proj_stats
+        self.proj_stats = proj_stats
     def get_price(self):
         return self.price
     def set_price(self, price):
@@ -35,6 +35,13 @@ class Player:
     def set_proj_points(self, stats):
         self.generate_projection(stats)
     def generate_projection(self, stats):
+        """
+        Sets a player's projected points by taking in a list of projected stats and calculating their points using DraftKings rules:
+        1pt per point, 1.25:assist, 1.5:rebound, 2:steal, 2:block, 0.5:3-pointer, -0.5:turnover
+        Additional bonus of 1.5 for a double-double and 3 for a triple-double
+        :param stats: list of: points, rebounds, assists, steals, blocks, 3s, turnovers
+        :return: None
+        """
         doubles=0
         doubles_bonus=0
         for x in stats[:5]:
