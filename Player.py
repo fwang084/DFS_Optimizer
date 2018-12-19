@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, name, team, position, minutes=0, stats=[0,0,0,0,0,0,0], image=None):
+    def __init__(self, name, team, position, minutes, stats=[0,0,0,0,0,0,0], image=None):
         self.name = name
         self.team = team
         self.position = position

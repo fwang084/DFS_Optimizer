@@ -1,4 +1,3 @@
-from Player import *
 from Team import *
 player_list=[]
 team_list=[Team('ATL'), Team('BOS'), Team('BKN'), Team('CHA'), Team('CHI'), Team('CLE'),
