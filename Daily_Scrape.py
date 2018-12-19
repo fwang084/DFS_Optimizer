@@ -37,6 +37,10 @@ workbook = xlrd.open_workbook('DKSalaries.xls')
 '''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
 salaries = workbook.sheet_by_index(0)
 def create_players():
+    """
+    Loops through every NBA player, creates a Player object to represent the player, and adds to player_list
+    :return: None
+    """
     for tr in list_of_players.select('tr.full_table'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
