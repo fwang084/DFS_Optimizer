@@ -40,8 +40,13 @@ def create_players():
     for tr in list_of_players.select('tr.full_table'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
-        player_list.append(Player(row[0], row[3], row[1], row[6]))
+        team_name=row[3]
+        for t in team_list:
+            if t.get_name()==team_name:
+                team=t
+        player_list.append(Player(row[0], team, row[1], row[6]))
 create_players()
+
 
 
 
