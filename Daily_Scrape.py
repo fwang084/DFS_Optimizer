@@ -48,8 +48,10 @@ def create_players():
         for t in team_list:
             if t.get_name()==team_name:
                 team=t
-        player_list.append(Player(row[0], team, row[1], row[6]))
+        stats=[row[28], row[22], row[23], row[24], row[25], row[10], row[26]]
+        player_list.append(Player(row[0], team, row[1], row[6], stats))
 create_players()
+
 
 
 

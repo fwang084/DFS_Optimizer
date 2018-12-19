@@ -18,12 +18,12 @@ class Player:
         return self.position
     def set_position(self, position):
         self.position=position
-    def get_expected_minutes(self):
+    def get_proj_minutes(self):
         return self.proj_minutes
     def set_minutes(self, proj_minutes):
         self.proj_minutes = proj_minutes
-    def get_stats(self):
-        return self.expected_stats
+    def get_proj_stats(self):
+        return self.proj_stats
     def set_stats(self, proj_stats):
         self.proj_stats = proj_stats
     def get_price(self):
