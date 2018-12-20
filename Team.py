@@ -1,10 +1,10 @@
 class Team:
-    def __init__(self, name, possessions=0, points=0, rebounds=0):
-        self.name = name
+    def __init__(self, names, possessions=0, points=0, rebounds=0):
+        self.names = names
         self.possessions = possessions
         self.points_allowed = points
         self.rebounds_allowed = rebounds
-    def get_name(self):
+    def get_names(self):
         return self.name
     def get_possessions(self):
         return self.possessions
