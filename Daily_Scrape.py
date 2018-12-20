@@ -54,21 +54,7 @@ def assign_team_stats():
     is in reference to, and assigns relevant stats to that team
     :return: None
     """
-def create_players():
-    """
-    Loops through every NBA player, creates a Player object to represent the player, and adds to player_list
-    :return: None
-    """
-    for tr in player_info_list.select('tr.full_table'):
-        td = tr.find_all('td')
-        row = [i.get_text() for i in td]
-        team_name=row[3]
-        for t in team_list:
-            if t.get_name()==team_name:
-                team=t
-        stats=[row[28], row[22], row[23], row[24], row[25], row[10], row[26]]
-        player_list.append(Player(row[0], team, row[1], row[6], stats))
-"""create_players()"""
+
 def find_player_salaries():
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
@@ -83,7 +69,25 @@ def find_player_salaries():
             row_num+=1
         except IndexError:
             return players
+
+def create_players():
+    """
+    Loops through every NBA player, creates a Player object to represent the player, and adds to player_list
+    :return: None
+    """
+    for tr in player_info_list.select('tr.full_table'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        team_name=row[3]
+        for t in team_list:
+            if team_name in t.get_names():
+                team=t
+        stats=[row[28], row[22], row[23], row[24], row[25], row[10], row[26]]
+        player_list.append(Player(row[0], team, row[1], row[6], stats))
+"""
 player_salaries = find_player_salaries()
+create_players()"""
+
 
 
 
