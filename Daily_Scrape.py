@@ -70,6 +70,11 @@ def create_players():
         player_list.append(Player(row[0], team, row[1], row[6], stats))
 """create_players()"""
 def find_player_salaries():
+    """
+    Loops through rows in XLS file until the row doesn't exist, which signifies that all players
+    have been added to the list
+    :return: list of lists, with each nested list containing DraftKings information for a player
+    """
     row_num = 1
     players=[]
     while True:
