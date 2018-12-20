@@ -68,7 +68,18 @@ def create_players():
                 team=t
         stats=[row[28], row[22], row[23], row[24], row[25], row[10], row[26]]
         player_list.append(Player(row[0], team, row[1], row[6], stats))
-create_players()
+"""create_players()"""
+def find_player_salaries():
+    row_num = 1
+    players=[]
+    while True:
+        try:
+            players.append([a.value for a in salaries.row(row_num)])
+            row_num+=1
+        except IndexError:
+            return players
+player_salaries = find_player_salaries()
+
 
 
 
