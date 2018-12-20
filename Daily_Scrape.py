@@ -31,8 +31,8 @@ def log_error(e):
    make it do anything."""
    print(e)
 
-raw_html = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
-list_of_players = BeautifulSoup(raw_html, 'html.parser')
+player_info = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
+player_info_list = BeautifulSoup(player_info, 'html.parser')
 workbook = xlrd.open_workbook('DKSalaries.xls')
 '''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
 salaries = workbook.sheet_by_index(0)
@@ -41,7 +41,7 @@ def create_players():
     Loops through every NBA player, creates a Player object to represent the player, and adds to player_list
     :return: None
     """
-    for tr in list_of_players.select('tr.full_table'):
+    for tr in player_info_list.select('tr.full_table'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
         team_name=row[3]
