@@ -72,7 +72,8 @@ def find_player_salaries():
 
 def create_players():
     """
-    Loops through every NBA player, creates a Player object to represent the player, and adds to player_list
+    Loops through every NBA player, and for those who are playing on the given slate,
+    creates a Player object to represent the player, and adds that to player_list
     :return: None
     """
     for tr in player_info_list.select('tr.full_table'):
