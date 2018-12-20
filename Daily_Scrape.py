@@ -50,8 +50,8 @@ salaries = workbook.sheet_by_index(0)
 
 def assign_team_stats():
     """
-    Loops through each row in tables from the team data websites, figures out which team the row
-    is in reference to, and assigns relevant stats to that team
+    Loops through each row in tables from the team data websites, finds which team the row
+    is in reference to, and assigns relevant statistics to that team
     :return: None
     """
 
