@@ -33,6 +33,16 @@ def log_error(e):
 
 player_info = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
 player_info_list = BeautifulSoup(player_info, 'html.parser')
+
+team_defense = simple_get("http://www.espn.com/nba/statistics/team/_/stat/defense-per-game")
+team_defense_list = BeautifulSoup(team_defense, 'html.parser')
+
+team_rebounds = simple_get("http://www.espn.com/nba/statistics/team/_/stat/rebounds-per-game")
+team_rebounds_list = BeautifulSoup(team_rebounds, 'html.parser')
+
+team_possessions = simple_get("https://www.nbastuffer.com/2018-2019-nba-team-stats/")
+team_possessions_list = BeautifulSoup(team_possessions, 'html.parser')
+
 workbook = xlrd.open_workbook('DKSalaries.xls')
 '''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
 salaries = workbook.sheet_by_index(0)
