@@ -1,10 +1,11 @@
 class Player:
-    def __init__(self, name, team, position, minutes, stats=[0,0,0,0,0,0,0], price = 0, image=None):
+    def __init__(self, name=[], team, opponent, positions, minutes, stats=[0,0,0,0,0,0,0], price = 0, image=None):
         self.name = name
         self.team = team
-        self.position = position
+        self.opponent = opponent
+        self.positions = positions
         self.avg_minutes = minutes
-        self.expected_minutes = minutes
+        self.proj_minutes = minutes
         self.avg_stats = stats
         self.proj_stats = stats
         self.price = price
@@ -12,12 +13,20 @@ class Player:
         self.image = image
     def get_name(self):
         return self.name
+    def set_name(self, name):
+        self.name = name
     def get_team(self):
         return self.team
-    def get_position(self):
-        return self.position
-    def set_position(self, position):
-        self.position=position
+    def set_team(self, team):
+        self.team = team
+    def get_opponent(self):
+        return self.opponent
+    def set_opponent(self, opponent):
+        self.opponent = opponent
+    def get_positions(self):
+        return self.positions
+    def set_positions(self, positions):
+        self.positions=positions
     def get_proj_minutes(self):
         return self.proj_minutes
     def set_minutes(self, proj_minutes):
