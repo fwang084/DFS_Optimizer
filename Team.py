@@ -1,11 +1,11 @@
 class Team:
-    def __init__(self, names, possessions=0, points=0, rebounds=0, threes=0, own_turnovers=0, opp_turnovers=0):
+    def __init__(self, names, possessions=0, points=0, rebounds=0, threes=0, steals_allowed=0, opp_turnovers=0):
         self.names = names
         self.possessions = possessions
         self.points_allowed = points
         self.rebound_percentage = rebounds
         self.threes_allowed = threes
-        self.own_turnovers = own_turnovers
+        self.steals_allowed = steals_allowed
         self.opp_turnovers = opp_turnovers
     def get_names(self):
         return self.names
@@ -25,11 +25,11 @@ class Team:
         return self.threes_allowed
     def set_threes_allowed(self, threes):
         self.threes_allowed = threes
-    def get_own_turnovers(self):
-        return self.own_turnovers
-    def set_own_turnovers(self, turnovers):
-        self.own_turnovers = turnovers
+    def get_steals_allowed(self):
+        return self.steals_allowed
+    def set_steals_allowed(self, steals):
+        self.steals_allowed = steals
     def get_opp_turnovers(self):
         return self.opp_turnovers
-    def set_opp_turnovers(self):
+    def set_opp_turnovers(self, turnovers):
         self.opp_turnovers = turnovers
