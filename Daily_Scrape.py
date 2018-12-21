@@ -35,6 +35,9 @@ def log_error(e):
 player_info = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
 player_info_list = BeautifulSoup(player_info, 'html.parser')
 
+team_offense = simple_get("http://www.espn.com/nba/statistics/team/_/stat/offense-per-game")
+team_offense_list = BeautifulSoup(team_offense, 'html.parser')
+
 team_defense = simple_get("http://www.espn.com/nba/statistics/team/_/stat/defense-per-game")
 team_defense_list = BeautifulSoup(team_defense, 'html.parser')
 
