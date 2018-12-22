@@ -41,6 +41,9 @@ team_defense_list = BeautifulSoup(team_defense, 'html.parser')
 team_rebounds = simple_get("http://www.espn.com/nba/statistics/team/_/stat/rebounds-per-game")
 team_rebounds_list = BeautifulSoup(team_rebounds, 'html.parser')
 
+team_miscellaneous = simple_get("http://www.espn.com/nba/statistics/team/_/stat/miscellaneous-per-game")
+team_misc_list = BeautifulSoup(team_miscellaneous, 'html.parser')
+
 team_possessions = simple_get("https://www.nbastuffer.com/2018-2019-nba-team-stats/")
 team_possessions_list = BeautifulSoup(team_possessions, 'html.parser')
 
