@@ -54,6 +54,21 @@ def assign_team_stats():
     is in reference to, and assigns relevant statistics to that team
     :return: None
     """
+    for tr in team_defense_list.select('tr.oddrow'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        for t in team_list:
+            if row[1] in t.get_names():
+                t.set_points_allowed(row[2])
+                t.set_threes_allowed(row[6])
+    for tr in team_defense_list.select('tr.evenrow'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        for t in team_list:
+            if row[1] in t.get_names():
+                t.set_points_allowed(row[2])
+                t.set_threes_allowed(row[6])
+
     for tr in team_possessions_list.select('tr.odd'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
@@ -100,8 +115,10 @@ def create_players():
         player_list.append(Player(row[0], team, row[1], row[6], stats))
 """
 player_salaries = find_player_salaries()
-create_players()
+create_players() 
 assign_team_stats() """
+
+
 
 
 
