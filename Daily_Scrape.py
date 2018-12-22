@@ -175,11 +175,11 @@ def create_players():
 """
 player_salaries = find_player_salaries()
 create_players() 
-average = assign_team_stats() 
+averages = assign_team_stats() 
 possessions_total=0
 for t in team_list:
     possessions_total += float(t.get_possessions())
-average.append(float(possessions_total/30)) """
+averages.append(float(possessions_total/30)) """
 
 
 
