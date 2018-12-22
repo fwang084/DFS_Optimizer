@@ -12,7 +12,7 @@ class Team:
     def get_possessions(self):
         return self.possessions
     def set_possessions(self, possessions):
-        self.possesions = possessions
+        self.possessions = possessions
     def get_points_allowed(self):
         return self.points_allowed
     def set_points_allowed(self, points):

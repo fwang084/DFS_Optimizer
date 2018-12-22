@@ -54,7 +54,20 @@ def assign_team_stats():
     is in reference to, and assigns relevant statistics to that team
     :return: None
     """
-
+    for tr in team_possessions_list.select('tr.odd'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        if len(row)>1:
+            for t in team_list:
+                if row[1] in t.get_names():
+                    t.set_possessions(row[8])
+    for tr in team_possessions_list.select('tr.even'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        if len(row)>1:
+            for t in team_list:
+                if row[1] in t.get_names():
+                    t.set_possessions(row[8])
 def find_player_salaries():
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
@@ -87,8 +100,8 @@ def create_players():
         player_list.append(Player(row[0], team, row[1], row[6], stats))
 """
 player_salaries = find_player_salaries()
-create_players()"""
-
+create_players()
+assign_team_stats() """
 
 
 
