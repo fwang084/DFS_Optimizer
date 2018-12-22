@@ -1,12 +1,15 @@
 class Team:
-    def __init__(self, names, possessions=0, points=0, rebounds=0, threes=0, steals_allowed=0, opp_turnovers=0):
+    def __init__(self, names, possessions=0, points=0, rebounds=0, assists=0, threes=0, steals=0,
+                 blocks=0, turnovers=0):
         self.names = names
         self.possessions = possessions
         self.points_allowed = points
         self.rebounds_allowed = rebounds
+        self.assists_allowed = assists
         self.threes_allowed = threes
-        self.steals_allowed = steals_allowed
-        self.opp_turnovers = opp_turnovers
+        self.steals_allowed = steals
+        self.blocks_allowed = blocks
+        self.opp_turnovers = turnovers
     def get_names(self):
         return self.names
     def get_possessions(self):
@@ -21,6 +24,10 @@ class Team:
         return self.rebounds_allowed
     def set_rebounds_allowed(self, rebounds):
         self.rebounds_allowed = rebounds
+    def get_assists_allowed(self):
+        return self.assists_allowed
+    def set_assists_allowed(self, assists):
+        self.assists_allowed = assists
     def get_threes_allowed(self):
         return self.threes_allowed
     def set_threes_allowed(self, threes):
@@ -29,6 +36,10 @@ class Team:
         return self.steals_allowed
     def set_steals_allowed(self, steals):
         self.steals_allowed = steals
+    def get_blocks_allowed(self):
+        return self.blocks_allowed
+    def set_blocks_allowed(self, blocks):
+        self.blocks_allowed = blocks
     def get_opp_turnovers(self):
         return self.opp_turnovers
     def set_opp_turnovers(self, turnovers):

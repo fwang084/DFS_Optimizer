@@ -85,6 +85,24 @@ def assign_team_stats():
             if row[1] in t.get_names():
                 t.set_rebounds_allowed(row[10])
 
+    for tr in team_misc_list.select('tr.oddrow'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        for t in team_list:
+            if row[1] in t.get_names():
+                t.set_assists_allowed(row[3])
+                t.set_steals_allowed(row[5])
+                t.set_blocks_allowed(row[7])
+                t.set_opp_turnovers(row[9])
+    for tr in team_misc_list.select('tr.evenrow'):
+        td = tr.find_all('td')
+        row = [i.get_text() for i in td]
+        for t in team_list:
+            if row[1] in t.get_names():
+                t.set_assists_allowed(row[3])
+                t.set_steals_allowed(row[5])
+                t.set_blocks_allowed(row[7])
+                t.set_opp_turnovers(row[9])
 
     for tr in team_possessions_list.select('tr.odd'):
         td = tr.find_all('td')
@@ -134,6 +152,7 @@ def create_players():
 player_salaries = find_player_salaries()
 create_players() 
 assign_team_stats() """
+
 
 
 
