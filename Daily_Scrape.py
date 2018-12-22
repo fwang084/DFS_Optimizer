@@ -55,8 +55,10 @@ def assign_team_stats():
     """
     Loops through each row in tables from the team data websites, finds which team the row
     is in reference to, and assigns relevant statistics to that team
-    :return: None
+    :return: Average of each of these statistics
     """
+    points_total = 0
+    threes_total = 0
     for tr in team_defense_list.select('tr.oddrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
@@ -64,6 +66,8 @@ def assign_team_stats():
             if row[1] in t.get_names():
                 t.set_points_allowed(row[2])
                 t.set_threes_allowed(row[6])
+                points_total += float(row[2])
+                threes_total += float(row[6])
     for tr in team_defense_list.select('tr.evenrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
@@ -71,20 +75,29 @@ def assign_team_stats():
             if row[1] in t.get_names():
                 t.set_points_allowed(row[2])
                 t.set_threes_allowed(row[6])
+                points_total += float(row[2])
+                threes_total += float(row[6])
 
+    rebounds_total = 0
     for tr in team_rebounds_list.select('tr.oddrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
                 t.set_rebounds_allowed(row[10])
+                rebounds_total += float(row[10])
     for tr in team_rebounds_list.select('tr.evenrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
                 t.set_rebounds_allowed(row[10])
+                rebounds_total += float(row[10])
 
+    assists_total = 0
+    steals_total = 0
+    blocks_total = 0
+    turnovers_total = 0
     for tr in team_misc_list.select('tr.oddrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
@@ -94,6 +107,10 @@ def assign_team_stats():
                 t.set_steals_allowed(row[5])
                 t.set_blocks_allowed(row[7])
                 t.set_opp_turnovers(row[9])
+                assists_total += float(row[3])
+                steals_total += float(row[5])
+                blocks_total += float(row[7])
+                turnovers_total += float(row[9])
     for tr in team_misc_list.select('tr.evenrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
@@ -103,6 +120,10 @@ def assign_team_stats():
                 t.set_steals_allowed(row[5])
                 t.set_blocks_allowed(row[7])
                 t.set_opp_turnovers(row[9])
+                assists_total += float(row[3])
+                steals_total += float(row[5])
+                blocks_total += float(row[7])
+                turnovers_total += float(row[9])
 
     for tr in team_possessions_list.select('tr.odd'):
         td = tr.find_all('td')
@@ -118,6 +139,9 @@ def assign_team_stats():
             for t in team_list:
                 if row[1] in t.get_names():
                     t.set_possessions(row[8])
+    return [item/30 for item in [points_total, rebounds_total, assists_total, threes_total,
+                                 steals_total, blocks_total, turnovers_total]]
+
 def find_player_salaries():
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
@@ -151,7 +175,13 @@ def create_players():
 """
 player_salaries = find_player_salaries()
 create_players() 
-assign_team_stats() """
+average = assign_team_stats()
+possessions_total=0
+for t in team_list:
+    possessions_total += float(t.get_possessions())
+average.append(float(possessions_total/30)) """
+
+
 
 
 
