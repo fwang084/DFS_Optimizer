@@ -3,7 +3,7 @@ class Team:
         self.names = names
         self.possessions = possessions
         self.points_allowed = points
-        self.rebound_percentage = rebounds
+        self.rebounds_allowed = rebounds
         self.threes_allowed = threes
         self.steals_allowed = steals_allowed
         self.opp_turnovers = opp_turnovers
@@ -17,10 +17,10 @@ class Team:
         return self.points_allowed
     def set_points_allowed(self, points):
         self.points_allowed = points
-    def get_rebound_percentage(self):
-        return self.rebound_percentage
-    def set_rebound_percentage(self, rebounds):
-        self.rebound_percentage = rebounds
+    def get_rebounds_allowed(self):
+        return self.rebounds_allowed
+    def set_rebounds_allowed(self, rebounds):
+        self.rebounds_allowed = rebounds
     def get_threes_allowed(self):
         return self.threes_allowed
     def set_threes_allowed(self, threes):
