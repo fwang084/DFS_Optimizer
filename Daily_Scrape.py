@@ -142,6 +142,14 @@ def assign_team_stats():
     return [item/30 for item in [points_total, rebounds_total, assists_total, threes_total,
                                  steals_total, blocks_total, turnovers_total]]
 
+def assign_team_factors(league_averages):
+    """
+    Assigns a list of factors to each team: player projections will be calculated by multiplying this
+    list of factors by their average stats
+    :param league_averages: average team statistics
+    :return: None
+    """
+
 def find_player_salaries():
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
