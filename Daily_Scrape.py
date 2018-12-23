@@ -150,6 +150,7 @@ def assign_team_factors(league_averages):
     :return: None
     """
 
+
 def find_player_salaries():
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
