@@ -186,7 +186,7 @@ def create_players(salaries):
             opponent=figure_out_opponent(row[6][:7], row[7])
             stats=[float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                float(row[25]), float(row[10]), float(row[26])]
-            player_list.append(Player(row[0], team, row[1], float(row[6]), stats))
+            player_list.append(Player(row[0], team, row[1], float(row[6]), opponent, stats, price))
 
 def figure_out_opponent(two_teams, own_team):
     """
@@ -201,7 +201,7 @@ def figure_out_opponent(two_teams, own_team):
     else:
         team_to_return=two_teams[:3]
     for t in team_list:
-        if team_to_return in t.get_names()
+        if team_to_return in t.get_names():
             return t
 
 """
@@ -213,8 +213,7 @@ for t in team_list:
     possessions_total += t.get_possessions()
 averages.append(float(possessions_total/30))
 assign_team_factors(averages)"""
-player_salaries = find_player_salaries()
-print(player_salaries)
+
 
 
 
