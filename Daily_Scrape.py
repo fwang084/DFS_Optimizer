@@ -49,7 +49,7 @@ team_possessions_list = BeautifulSoup(team_possessions, 'html.parser')
 
 workbook = xlrd.open_workbook('DKSalaries.xls')
 '''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
-salaries = workbook.sheet_by_index(0)
+salaries_list = workbook.sheet_by_index(0)
 
 def assign_team_stats():
     """
@@ -135,7 +135,7 @@ def assign_team_stats():
     for tr in team_possessions_list.select('tr.even'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
-        if len(row)>1:
+        if len(row) > 1:
             for t in team_list:
                 if row[1] in t.get_names():
                     t.set_possessions(float(row[8]))
@@ -158,9 +158,10 @@ def assign_team_factors(league_averages):
     turnovers_average = league_averages[6]
     possessions_average =league_averages[7]
     for t in team_list:
+        t='hi'
 
 
-def find_player_salaries():
+def find_player_salaries(salaries):
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
     have been added to the list
@@ -215,7 +216,7 @@ def figure_out_opponent(two_teams, own_team):
             return t
 
 """
-player_salaries = find_player_salaries()
+player_salaries = find_player_salaries(salaries_list)
 averages = assign_team_stats() 
 possessions_total=0
 for t in team_list:
