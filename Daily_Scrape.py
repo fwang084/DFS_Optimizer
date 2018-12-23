@@ -64,8 +64,8 @@ def assign_team_stats():
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
-                t.set_points_allowed(row[2])
-                t.set_threes_allowed(row[6])
+                t.set_points_allowed(float(row[2]))
+                t.set_threes_allowed(float(row[6]))
                 points_total += float(row[2])
                 threes_total += float(row[6])
     for tr in team_defense_list.select('tr.evenrow'):
@@ -73,8 +73,8 @@ def assign_team_stats():
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
-                t.set_points_allowed(row[2])
-                t.set_threes_allowed(row[6])
+                t.set_points_allowed(float(row[2]))
+                t.set_threes_allowed(float(row[6]))
                 points_total += float(row[2])
                 threes_total += float(row[6])
 
@@ -84,14 +84,14 @@ def assign_team_stats():
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
-                t.set_rebounds_allowed(row[10])
+                t.set_rebounds_allowed(float(row[10]))
                 rebounds_total += float(row[10])
     for tr in team_rebounds_list.select('tr.evenrow'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
-                t.set_rebounds_allowed(row[10])
+                t.set_rebounds_allowed(float(row[10]))
                 rebounds_total += float(row[10])
 
     assists_total = 0
@@ -103,10 +103,10 @@ def assign_team_stats():
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
-                t.set_assists_allowed(row[3])
-                t.set_steals_allowed(row[5])
-                t.set_blocks_allowed(row[7])
-                t.set_opp_turnovers(row[9])
+                t.set_assists_allowed(float(row[3]))
+                t.set_steals_allowed(float(row[5]))
+                t.set_blocks_allowed(float(row[7]))
+                t.set_opp_turnovers(float(row[9]))
                 assists_total += float(row[3])
                 steals_total += float(row[5])
                 blocks_total += float(row[7])
@@ -116,10 +116,10 @@ def assign_team_stats():
         row = [i.get_text() for i in td]
         for t in team_list:
             if row[1] in t.get_names():
-                t.set_assists_allowed(row[3])
-                t.set_steals_allowed(row[5])
-                t.set_blocks_allowed(row[7])
-                t.set_opp_turnovers(row[9])
+                t.set_assists_allowed(float(row[3]))
+                t.set_steals_allowed(float(row[5]))
+                t.set_blocks_allowed(float(row[7]))
+                t.set_opp_turnovers(float(row[9]))
                 assists_total += float(row[3])
                 steals_total += float(row[5])
                 blocks_total += float(row[7])
@@ -131,14 +131,14 @@ def assign_team_stats():
         if len(row)>1:
             for t in team_list:
                 if row[1] in t.get_names():
-                    t.set_possessions(row[8])
+                    t.set_possessions(float(row[8]))
     for tr in team_possessions_list.select('tr.even'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
         if len(row)>1:
             for t in team_list:
                 if row[1] in t.get_names():
-                    t.set_possessions(row[8])
+                    t.set_possessions(float(row[8]))
     return [item/30 for item in [points_total, rebounds_total, assists_total, steals_total,
                                  blocks_total, threes_total, turnovers_total]]
 
@@ -187,7 +187,7 @@ create_players()
 averages = assign_team_stats() 
 possessions_total=0
 for t in team_list:
-    possessions_total += float(t.get_possessions())
+    possessions_total += t.get_possessions()
 averages.append(float(possessions_total/30)) """
 
 
