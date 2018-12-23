@@ -1,11 +1,11 @@
 class Player:
-    def __init__(self, name, team, opponent, positions, minutes, stats=[0,0,0,0,0,0,0], price = 0, image=None):
+    def __init__(self, name, team, positions, minutes, opponent=None, stats=[0,0,0,0,0,0,0], price = 0, image=None):
         self.name = name
         self.team = team
-        self.opponent = opponent
         self.positions = positions
         self.avg_minutes = minutes
         self.proj_minutes = minutes
+        self.opponent = opponent
         self.avg_stats = stats
         self.proj_stats = stats
         self.price = price

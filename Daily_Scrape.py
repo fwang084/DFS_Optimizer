@@ -139,8 +139,8 @@ def assign_team_stats():
             for t in team_list:
                 if row[1] in t.get_names():
                     t.set_possessions(row[8])
-    return [item/30 for item in [points_total, rebounds_total, assists_total, threes_total,
-                                 steals_total, blocks_total, turnovers_total]]
+    return [item/30 for item in [points_total, rebounds_total, assists_total, steals_total,
+                                 blocks_total, threes_total, turnovers_total]]
 
 def assign_team_factors(league_averages):
     """
@@ -149,7 +149,6 @@ def assign_team_factors(league_averages):
     :param league_averages: average team statistics
     :return: None
     """
-
 
 def find_player_salaries():
     """
@@ -179,8 +178,9 @@ def create_players():
         for t in team_list:
             if team_name in t.get_names():
                 team=t
-        stats=[row[28], row[22], row[23], row[24], row[25], row[10], row[26]]
-        player_list.append(Player(row[0], team, row[1], row[6], stats))
+        stats=[float(row[28]), float(row[22]), float(row[23]), float(row[24]),
+               float(row[25]), float(row[10]), float(row[26])]
+        player_list.append(Player(row[0], team, row[1], float(row[6]), stats))
 """
 player_salaries = find_player_salaries()
 create_players() 
