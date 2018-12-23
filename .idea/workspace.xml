@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd242401-9296-49f8-9b1d-64bcecf0a2cb" name="Default Changelist" comment="" />
+    <list default="true" id="dd242401-9296-49f8-9b1d-64bcecf0a2cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Daily_Scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Scrape.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +38,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="9" />
-          <entry key="py" value="13840" />
+          <entry key="py" value="14872" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="13849" />
+          <entry key="Python" value="14881" />
         </counts>
       </usages-collector>
     </session>
@@ -67,12 +69,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Team.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            <state relative-caret-position="765">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
-                <marker date="1545527937212" expanded="true" signature="11:16" ph="..." />
-                <marker date="1545527937212" expanded="true" signature="1039:1044" ph="..." />
-                <marker date="1545527937212" expanded="true" signature="1446:1488" ph="..." />
+                <marker date="1545555727786" expanded="true" signature="11:16" ph="..." />
+                <marker date="1545555727786" expanded="true" signature="1039:1044" ph="..." />
+                <marker date="1545555727786" expanded="true" signature="1446:1488" ph="..." />
               </folding>
             </state>
           </provider>
@@ -90,13 +92,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Daily_Scrape.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="158" column="43" lean-forward="true" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
+            <state relative-caret-position="374">
+              <caret line="209" column="26" selection-start-line="209" selection-start-column="26" selection-end-line="209" selection-end-column="26" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <marker date="1545554394102" expanded="true" signature="2155:5366" ph="..." />
-                <marker date="1545554394102" expanded="true" signature="5858:6446" ph="..." />
-                <marker date="1545554394102" expanded="true" signature="7907:8477" ph="..." />
+                <marker date="1545556267616" expanded="true" signature="2160:5371" ph="..." />
+                <marker date="1545556267616" expanded="true" signature="5865:7511" ph="..." />
+                <marker date="1545556267616" expanded="true" signature="9217:9787" ph="..." />
               </folding>
             </state>
           </provider>
@@ -133,8 +135,8 @@
         <option value="$PROJECT_DIR$/Calculate.py" />
         <option value="$PROJECT_DIR$/Testing.py" />
         <option value="$PROJECT_DIR$/Initialize.py" />
-        <option value="$PROJECT_DIR$/Team.py" />
         <option value="$PROJECT_DIR$/Player.py" />
+        <option value="$PROJECT_DIR$/Team.py" />
         <option value="$PROJECT_DIR$/Daily_Scrape.py" />
       </list>
     </option>
@@ -293,18 +295,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Team.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-          <folding>
-            <marker date="1545527937212" expanded="true" signature="11:16" ph="..." />
-            <marker date="1545527937212" expanded="true" signature="1039:1044" ph="..." />
-            <marker date="1545527937212" expanded="true" signature="1446:1488" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Player.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -319,15 +309,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Team.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <marker date="1545555727786" expanded="true" signature="11:16" ph="..." />
+            <marker date="1545555727786" expanded="true" signature="1039:1044" ph="..." />
+            <marker date="1545555727786" expanded="true" signature="1446:1488" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Daily_Scrape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="158" column="43" lean-forward="true" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
+        <state relative-caret-position="374">
+          <caret line="209" column="26" selection-start-line="209" selection-start-column="26" selection-end-line="209" selection-end-column="26" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <marker date="1545554394102" expanded="true" signature="2155:5366" ph="..." />
-            <marker date="1545554394102" expanded="true" signature="5858:6446" ph="..." />
-            <marker date="1545554394102" expanded="true" signature="7907:8477" ph="..." />
+            <marker date="1545556267616" expanded="true" signature="2160:5371" ph="..." />
+            <marker date="1545556267616" expanded="true" signature="5865:7511" ph="..." />
+            <marker date="1545556267616" expanded="true" signature="9217:9787" ph="..." />
           </folding>
         </state>
       </provider>

@@ -202,9 +202,11 @@ def create_players(salaries):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
         team_name=row[3]
+        team = None
         for t in team_list:
             if team_name in t.get_names():
-                team=t
+                team = t
+        assert (team != None), "The player's team should be in team_list"
         price = 0
         for player_dk in salaries:
             if row[0] == player_dk[3]:
