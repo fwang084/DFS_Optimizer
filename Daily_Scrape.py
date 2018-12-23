@@ -145,7 +145,7 @@ def assign_team_stats():
 def assign_team_factors(league_averages):
     """
     Assigns a list of factors to each team: player projections will be calculated by multiplying this
-    list of factors by their average stats
+    list of factors by their average stats. Method of computation is based on experience and is fluid
     :param league_averages: average team statistics
     :return: None
     """
