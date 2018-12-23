@@ -195,6 +195,7 @@ def create_players(salaries):
     """
     Loops through every NBA player, and for those who are playing on the given slate,
     creates a Player object to represent the player, and adds that to player_list
+    :param salaries: list of lists, with each nested list containing DraftKings player info
     :return: None
     """
     for tr in player_info_list.select('tr.full_table'):
