@@ -149,6 +149,16 @@ def assign_team_factors(league_averages):
     :param league_averages: average team statistics
     :return: None
     """
+    points_average = league_averages[0]
+    rebounds_average = league_averages[1]
+    assists_average = league_averages[2]
+    steals_average = league_averages[3]
+    blocks_average = league_averages[4]
+    threes_average = league_averages[5]
+    turnovers_average = league_averages[6]
+    possessions_average =league_averages[7]
+    for t in team_list:
+
 
 def find_player_salaries():
     """
@@ -206,13 +216,13 @@ def figure_out_opponent(two_teams, own_team):
 
 """
 player_salaries = find_player_salaries()
-create_players(player_salaries) 
 averages = assign_team_stats() 
 possessions_total=0
 for t in team_list:
     possessions_total += t.get_possessions()
 averages.append(float(possessions_total/30))
-assign_team_factors(averages)"""
+assign_team_factors(averages)
+create_players(player_salaries) """
 
 
 

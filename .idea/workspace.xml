@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd242401-9296-49f8-9b1d-64bcecf0a2cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily_Scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Scrape.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,12 +38,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="9" />
-          <entry key="py" value="12854" />
+          <entry key="py" value="13536" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="12863" />
+          <entry key="Python" value="13545" />
         </counts>
       </usages-collector>
     </session>
@@ -93,13 +92,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Daily_Scrape.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="183" column="30" selection-start-line="183" selection-start-column="30" selection-end-line="183" selection-end-column="30" />
+            <state relative-caret-position="-206">
+              <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <marker date="1545534063403" expanded="true" signature="2155:5364" ph="..." />
-                <marker date="1545534063403" expanded="true" signature="5856:6089" ph="..." />
-                <marker date="1545534063403" expanded="true" signature="7451:7504" ph="..." />
+                <marker date="1545551309984" expanded="true" signature="2155:5366" ph="..." />
+                <marker date="1545551309984" expanded="true" signature="5858:6124" ph="..." />
+                <marker date="1545551309984" expanded="true" signature="7585:8155" ph="..." />
               </folding>
             </state>
           </provider>
@@ -237,13 +236,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.2313253" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.2313253" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.22771084" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.22771084" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.2313253" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -324,13 +323,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Daily_Scrape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="183" column="30" selection-start-line="183" selection-start-column="30" selection-end-line="183" selection-end-column="30" />
+        <state relative-caret-position="-206">
+          <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <marker date="1545534063403" expanded="true" signature="2155:5364" ph="..." />
-            <marker date="1545534063403" expanded="true" signature="5856:6089" ph="..." />
-            <marker date="1545534063403" expanded="true" signature="7451:7504" ph="..." />
+            <marker date="1545551309984" expanded="true" signature="2155:5366" ph="..." />
+            <marker date="1545551309984" expanded="true" signature="5858:6124" ph="..." />
+            <marker date="1545551309984" expanded="true" signature="7585:8155" ph="..." />
           </folding>
         </state>
       </provider>
