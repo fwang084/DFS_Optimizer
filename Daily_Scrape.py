@@ -128,7 +128,7 @@ def assign_team_stats():
     for tr in team_possessions_list.select('tr.odd'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
-        if len(row)>1:
+        if len(row) > 1:
             for t in team_list:
                 if row[1] in t.get_names():
                     t.set_possessions(float(row[8]))
@@ -161,7 +161,7 @@ def find_player_salaries():
     while True:
         try:
             players.append([a.value for a in salaries.row(row_num)])
-            row_num+=1
+            row_num += 1
         except IndexError:
             return players
 
@@ -180,11 +180,11 @@ def create_players(salaries):
                 team=t
         price = 0
         for player_dk in salaries:
-            if row[0]==player_dk[3]:
+            if row[0] == player_dk[3]:
                 price = row[5]
-        if price!=0:
-            opponent=figure_out_opponent(row[6][:7], row[7])
-            stats=[float(row[28]), float(row[22]), float(row[23]), float(row[24]),
+        if price != 0:
+            opponent = figure_out_opponent(row[6][:7], row[7])
+            stats = [float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                float(row[25]), float(row[10]), float(row[26])]
             player_list.append(Player(row[0], team, row[1], float(row[6]), opponent, stats, price))
 
@@ -196,10 +196,10 @@ def figure_out_opponent(two_teams, own_team):
     :param own_team: string representing one team (ex. 'GSW')
     :return: the Team instance representing the other team
     """
-    if two_teams[:3]==own_team:
-        team_to_return=two_teams[4:]
+    if two_teams[:3] == own_team:
+        team_to_return = two_teams[4:]
     else:
-        team_to_return=two_teams[:3]
+        team_to_return = two_teams[:3]
     for t in team_list:
         if team_to_return in t.get_names():
             return t
