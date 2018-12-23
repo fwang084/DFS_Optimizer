@@ -149,6 +149,7 @@ def assign_team_factors(league_averages):
     :param league_averages: average team statistics
     :return: None
     """
+    assert (len(league_averages) == 8), "league_average should contain 8 averages"
     points_average = league_averages[0]
     rebounds_average = league_averages[1]
     assists_average = league_averages[2]
