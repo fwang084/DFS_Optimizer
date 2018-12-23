@@ -179,6 +179,7 @@ def find_player_salaries(salaries):
     """
     Loops through rows in XLS file until the row doesn't exist, which signifies that all players
     have been added to the list
+    :param salaries: XLS file containing DraftKings salary information
     :return: list of lists, with each nested list containing DraftKings information for a player
     """
     row_num = 1
