@@ -206,7 +206,7 @@ def create_players(salaries):
         for t in team_list:
             if team_name in t.get_names():
                 team = t
-        assert (team != None), "The player's team should be in team_list"
+        assert (team is not None), "The player's team should be in team_list"
         price = 0
         for player_dk in salaries:
             if row[0] == player_dk[3]:
@@ -225,6 +225,9 @@ def figure_out_opponent(two_teams, own_team):
     :param own_team: string representing one team (ex. 'GSW')
     :return: the Team instance representing the other team
     """
+    assert (len(two_teams) == 7), "two_teams should have the form 'CLE@GSW'"
+    assert (two_teams[3] == '@'), "two_teams should have the form 'CLE@GSW'"
+    assert (len(own_team) == 3), "one_team should have the form GSW"
     if two_teams[:3] == own_team:
         team_to_return = two_teams[4:]
     else:
