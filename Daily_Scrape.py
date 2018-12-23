@@ -165,7 +165,7 @@ def find_player_salaries():
         except IndexError:
             return players
 
-def create_players():
+def create_players(salaries):
     """
     Loops through every NBA player, and for those who are playing on the given slate,
     creates a Player object to represent the player, and adds that to player_list
@@ -178,17 +178,43 @@ def create_players():
         for t in team_list:
             if team_name in t.get_names():
                 team=t
-        stats=[float(row[28]), float(row[22]), float(row[23]), float(row[24]),
+        price = 0
+        for player_dk in salaries:
+            if row[0]==player_dk[3]:
+                price = row[5]
+        if price!=0:
+            opponent=figure_out_opponent(row[6][:7], row[7])
+            stats=[float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                float(row[25]), float(row[10]), float(row[26])]
-        player_list.append(Player(row[0], team, row[1], float(row[6]), stats))
+            player_list.append(Player(row[0], team, row[1], float(row[6]), stats))
+
+def figure_out_opponent(two_teams, own_team):
+    """
+    Takes a string in the form (team abbreviation 1)@(team abbreviation 2), and a string
+    that is one of the teams, and figures out the other team
+    :param two_teams: string representing the matchup (ex. 'CLE@GSW')
+    :param own_team: string representing one team (ex. 'GSW')
+    :return: the Team instance representing the other team
+    """
+    if two_teams[:3]==own_team:
+        team_to_return=two_teams[4:]
+    else:
+        team_to_return=two_teams[:3]
+    for t in team_list:
+        if team_to_return in t.get_names()
+            return t
+
 """
 player_salaries = find_player_salaries()
-create_players() 
+create_players(player_salaries) 
 averages = assign_team_stats() 
 possessions_total=0
 for t in team_list:
     possessions_total += t.get_possessions()
-averages.append(float(possessions_total/30)) """
+averages.append(float(possessions_total/30))
+assign_team_factors(averages)"""
+player_salaries = find_player_salaries()
+print(player_salaries)
 
 
 
