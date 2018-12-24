@@ -214,8 +214,10 @@ def create_players(salaries):
                 price = row[5]
         if price != 0:
             opponent = figure_out_opponent(row[6][:7], row[7])
+            factors = opponent.get_factors()
             stats = [float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                float(row[25]), float(row[10]), float(row[26])]
+            proj_stats = multiply_lists(factors, stats)
             player_list.append(Player(row[0], team, row[1], float(row[6]), opponent, stats, price))
 
 def figure_out_opponent(two_teams, own_team):
@@ -236,6 +238,12 @@ def figure_out_opponent(two_teams, own_team):
     for t in team_list:
         if team_to_return in t.get_names():
             return t
+
+def multiply_lists(lst1, lst2):
+    """
+    Takes two equal-length lists which contain float values
+    :return: list containing values in corresponding positions multiplied
+    """
 
 """
 player_salaries = find_player_salaries(salaries_list)
