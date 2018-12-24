@@ -197,7 +197,7 @@ def create_players(salaries):
             proj_stats = multiply_lists(factors, avg_stats)
             proj_score = generate_projection(proj_stats)
             player_list.append(Player(row[0], team, row[1], float(row[6]), opponent,
-                                      avg_stats, proj_stats, proj_score, price))
+                                      avg_stats, proj_stats, price, proj_score))
 
 def figure_out_opponent(two_teams, own_team):
     """
@@ -245,8 +245,7 @@ def generate_projection(stats):
         doubles_bonus = 4.5
     elif doubles == 2:
         doubles_bonus = 1.5
-    return stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] \
-               + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
+    return stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
 
 player_info = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
 player_info_list = BeautifulSoup(player_info, 'html.parser')
@@ -275,6 +274,9 @@ for t in team_list:
 averages.append(float(possessions_total/30))
 assign_team_factors(averages)
 create_players(player_salaries)
+for p in player_list:
+    if p.get_name()=='LeBron James':
+        print(p.get_name(), p.get_proj_stats(), p.get_proj_score())
 
 
 
