@@ -180,8 +180,7 @@ def create_players(salaries):
     for tr in player_info_list.select('tr.full_table'):
         td = tr.find_all('td')
         row = [i.get_text() for i in td]
-        team_name=row[3]
-        team = None
+        team_name = row[3]
         for t in team_list:
             if team_name in t.get_names():
                 team = t
@@ -189,8 +188,9 @@ def create_players(salaries):
         for player_dk in salaries:
             if row[0] == player_dk[2]:
                 price = row[5]
+                matchup = player_dk[6][:7]
         if price != 0:
-            opponent = figure_out_opponent(row[6][:7], row[7])
+            opponent = figure_out_opponent(matchup, team.get_names()[0])
             factors = opponent.get_factors()
             avg_stats = [float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                          float(row[25]), float(row[10]), float(row[26])]
@@ -267,20 +267,15 @@ workbook = xlrd.open_workbook('DKSalaries.xls')
 '''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
 salaries_list = workbook.sheet_by_index(0)
 
-"""player_salaries = find_player_salaries(salaries_list)"""
+player_salaries = find_player_salaries(salaries_list)
 averages = assign_team_stats()
 possessions_total=0
 for t in team_list:
     possessions_total += t.get_possessions()
 averages.append(float(possessions_total/30))
-print(averages)
 assign_team_factors(averages)
-for t in team_list:
-    print(t.get_factors())
-"""
 create_players(player_salaries)
-p=player_list[3]
-print(p.get_avg_stats())"""
+
 
 
 
