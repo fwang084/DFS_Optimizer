@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd242401-9296-49f8-9b1d-64bcecf0a2cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Daily_Scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Scrape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calculate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,12 +38,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="9" />
-          <entry key="py" value="17461" />
+          <entry key="py" value="17987" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="17470" />
+          <entry key="Python" value="17996" />
         </counts>
       </usages-collector>
     </session>
@@ -53,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="667">
               <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
               <folding>
                 <marker date="1545615110331" expanded="true" signature="564:594" ph="..." />
@@ -90,27 +90,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Daily_Scrape.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="191" column="38" lean-forward="true" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+            <state relative-caret-position="4155">
+              <caret line="277" selection-start-line="277" selection-end-line="277" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <marker date="1545641693571" expanded="true" signature="233:729" ph="..." />
-                <marker date="1545641693571" expanded="true" signature="756:1013" ph="..." />
-                <marker date="1545641693571" expanded="true" signature="1627:4838" ph="..." />
-                <marker date="1545641693571" expanded="true" signature="9309:10420" ph="..." />
+                <marker date="1545641749612" expanded="true" signature="233:729" ph="..." />
+                <marker date="1545641749612" expanded="true" signature="756:1013" ph="..." />
+                <marker date="1545641749612" expanded="true" signature="1627:4838" ph="..." />
+                <marker date="1545641749612" expanded="true" signature="9310:10421" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Calculate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="90">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,12 +142,12 @@
         <option value="$PROJECT_DIR$/Algorithm.py" />
         <option value="$PROJECT_DIR$/more_testing.py" />
         <option value="$PROJECT_DIR$/test_delete.py" />
-        <option value="$PROJECT_DIR$/Calculate.py" />
         <option value="$PROJECT_DIR$/Testing.py" />
         <option value="$PROJECT_DIR$/Initialize.py" />
         <option value="$PROJECT_DIR$/Team.py" />
         <option value="$PROJECT_DIR$/Player.py" />
         <option value="$PROJECT_DIR$/Daily_Scrape.py" />
+        <option value="$PROJECT_DIR$/Calculate.py" />
       </list>
     </option>
   </component>
@@ -190,7 +193,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="DailyScrape" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="Calculate" type="PythonConfigurationType" factoryName="Python">
       <module name="DFS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -202,7 +205,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Daily_Scrape.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Calculate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -244,7 +247,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.2313253" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -288,13 +291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calculate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Team.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -316,7 +312,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="667">
           <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding>
             <marker date="1545615110331" expanded="true" signature="564:594" ph="..." />
@@ -331,14 +327,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Daily_Scrape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="191" column="38" lean-forward="true" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+        <state relative-caret-position="4155">
+          <caret line="277" selection-start-line="277" selection-end-line="277" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <marker date="1545641693571" expanded="true" signature="233:729" ph="..." />
-            <marker date="1545641693571" expanded="true" signature="756:1013" ph="..." />
-            <marker date="1545641693571" expanded="true" signature="1627:4838" ph="..." />
-            <marker date="1545641693571" expanded="true" signature="9309:10420" ph="..." />
+            <marker date="1545641749612" expanded="true" signature="233:729" ph="..." />
+            <marker date="1545641749612" expanded="true" signature="756:1013" ph="..." />
+            <marker date="1545641749612" expanded="true" signature="1627:4838" ph="..." />
+            <marker date="1545641749612" expanded="true" signature="9310:10421" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calculate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
