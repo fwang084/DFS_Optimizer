@@ -189,6 +189,7 @@ def create_players(salaries):
             if row[0] == player_dk[2]:
                 price = row[5]
                 matchup = player_dk[6][:7]
+                positions = player_dk[0]
         if price != 0:
             opponent = figure_out_opponent(matchup, team.get_names()[0])
             factors = opponent.get_factors()
@@ -196,7 +197,7 @@ def create_players(salaries):
                          float(row[25]), float(row[10]), float(row[26])]
             proj_stats = multiply_lists(factors, avg_stats)
             proj_score = generate_projection(proj_stats)
-            player_list.append(Player(row[0], team, row[1], float(row[6]), opponent,
+            player_list.append(Player(row[0], team, positions, float(row[6]), opponent,
                                       avg_stats, proj_stats, price, proj_score))
 
 def figure_out_opponent(two_teams, own_team):
@@ -263,7 +264,7 @@ team_possessions = simple_get("https://www.nbastuffer.com/2018-2019-nba-team-sta
 team_possessions_list = BeautifulSoup(team_possessions, 'html.parser')
 
 workbook = xlrd.open_workbook('DKSalaries.xls')
-'''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
+"""DKSalaries.xls is a local file containing DraftKings salaries for the day"""
 salaries_list = workbook.sheet_by_index(0)
 
 player_salaries = find_player_salaries(salaries_list)
@@ -274,9 +275,8 @@ for t in team_list:
 averages.append(float(possessions_total/30))
 assign_team_factors(averages)
 create_players(player_salaries)
-for p in player_list:
-    if p.get_name()=='LeBron James':
-        print(p.get_name(), p.get_proj_stats(), p.get_proj_score())
+
+
 
 
 
