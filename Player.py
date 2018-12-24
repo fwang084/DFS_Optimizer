@@ -45,7 +45,7 @@ class Player:
         self.price = price
     def get_proj_points(self):
         return self.proj_points
-    def set_proj_points(self, stats):
+    def set_proj_score(self, stats):
         self.generate_projection(stats)
     def generate_projection(self, stats):
         """
@@ -64,5 +64,5 @@ class Player:
             doubles_bonus = 4.5
         elif double==2:
             doubles_bonus = 1.5
-        self.proj_points = stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
+        self.proj_score = stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
 
