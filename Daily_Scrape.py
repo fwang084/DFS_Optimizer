@@ -153,18 +153,18 @@ def assign_team_factors(league_averages):
     turnovers_average = league_averages[6]
     possessions_average =league_averages[7]
     for t in team_list:
-        points_sum = (t.get_possessions()/possessions_average) + (t.get_points_allowed()/points_average) + 2
-        points_factor = points_sum / 4
-        rebounds_sum = (t.get_rebounds_allowed()/rebounds_average) + 1
-        rebounds_factor = rebounds_sum / 2
-        assists_sum = (t.get_possessions()/possessions_average) + (t.get_assists_allowed()/assists_average) + 2
-        assists_factor = assists_sum / 4
+        points_sum = (t.get_possessions()/possessions_average) + 3*(t.get_points_allowed()/points_average) + 1
+        points_factor = points_sum / 5
+        rebounds_sum = 2*(t.get_rebounds_allowed()/rebounds_average) + 1
+        rebounds_factor = rebounds_sum / 3
+        assists_sum = (t.get_possessions()/possessions_average) + 3*(t.get_assists_allowed()/assists_average) + 1
+        assists_factor = assists_sum / 5
         steals_sum = (t.get_steals_allowed()/steals_average) + 1
         steals_factor = steals_sum / 2
         blocks_sum = (t.get_blocks_allowed()/blocks_average) + 1
         blocks_factor = blocks_sum / 2
-        threes_sum = (t.get_threes_allowed()/threes_average) + 1
-        threes_factor = threes_sum / 2
+        threes_sum = 2*(t.get_threes_allowed()/threes_average) + 1
+        threes_factor = threes_sum / 3
         turnovers_sum = (t.get_opp_turnovers()/turnovers_average) + 1
         turnovers_factor = turnovers_sum / 2
         t.set_factors([points_factor, rebounds_factor, assists_factor, steals_factor,
@@ -275,6 +275,8 @@ for t in team_list:
 averages.append(float(possessions_total/30))
 print(averages)
 assign_team_factors(averages)
+for t in team_list:
+    print(t.get_factors())
 """
 create_players(player_salaries)
 p=player_list[3]
