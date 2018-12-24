@@ -31,9 +31,13 @@ class Player:
         return self.proj_minutes
     def set_minutes(self, proj_minutes):
         self.proj_minutes = proj_minutes
+    def get_avg_stats(self):
+        return self.avg_stats
+    def set_avg_stats(self, avg_stats):
+        self.avg_stats = avg_stats
     def get_proj_stats(self):
         return self.proj_stats
-    def set_stats(self, proj_stats):
+    def set_proj_stats(self, proj_stats):
         self.proj_stats = proj_stats
     def get_price(self):
         return self.price

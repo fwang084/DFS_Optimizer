@@ -218,7 +218,7 @@ def create_players(salaries):
             avg_stats = [float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                float(row[25]), float(row[10]), float(row[26])]
             proj_stats = multiply_lists(factors, avg_stats)
-            player_list.append(Player(row[0], team, row[1], float(row[6]), opponent, proj_stats, price))
+            player_list.append(Player(row[0], team, row[1], float(row[6]), opponent, avg_stats, proj_stats, price))
 
 def figure_out_opponent(two_teams, own_team):
     """
