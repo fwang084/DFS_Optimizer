@@ -29,24 +29,21 @@ def is_good_response(resp):
 def log_error(e):
     print(e)
 
-player_info = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
-player_info_list = BeautifulSoup(player_info, 'html.parser')
-
-team_defense = simple_get("http://www.espn.com/nba/statistics/team/_/stat/defense-per-game")
-team_defense_list = BeautifulSoup(team_defense, 'html.parser')
-
-team_rebounds = simple_get("http://www.espn.com/nba/statistics/team/_/stat/rebounds-per-game")
-team_rebounds_list = BeautifulSoup(team_rebounds, 'html.parser')
-
-team_miscellaneous = simple_get("http://www.espn.com/nba/statistics/team/_/stat/miscellaneous-per-game")
-team_misc_list = BeautifulSoup(team_miscellaneous, 'html.parser')
-
-team_possessions = simple_get("https://www.nbastuffer.com/2018-2019-nba-team-stats/")
-team_possessions_list = BeautifulSoup(team_possessions, 'html.parser')
-
-workbook = xlrd.open_workbook('DKSalaries.xls')
-'''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
-salaries_list = workbook.sheet_by_index(0)
+def find_player_salaries(salaries):
+    """
+    Loops through rows in XLS file until the row doesn't exist, which signifies that all players
+    have been added to the list
+    :param salaries: XLS file containing DraftKings salary information
+    :return: list of lists, with each nested list containing DraftKings information for a player
+    """
+    row_num = 1
+    players=[]
+    while True:
+        try:
+            players.append([a.value for a in salaries.row(row_num)])
+            row_num += 1
+        except IndexError:
+            return players
 
 def assign_team_stats():
     """
@@ -173,22 +170,6 @@ def assign_team_factors(league_averages):
         t.set_factors([points_factor, rebounds_factor, assists_factor, steals_factor,
                        blocks_factor, threes_factor, turnovers_factor])
 
-def find_player_salaries(salaries):
-    """
-    Loops through rows in XLS file until the row doesn't exist, which signifies that all players
-    have been added to the list
-    :param salaries: XLS file containing DraftKings salary information
-    :return: list of lists, with each nested list containing DraftKings information for a player
-    """
-    row_num = 1
-    players=[]
-    while True:
-        try:
-            players.append([a.value for a in salaries.row(row_num)])
-            row_num += 1
-        except IndexError:
-            return players
-
 def create_players(salaries):
     """
     Loops through every NBA player, and for those who are playing on the given slate,
@@ -204,16 +185,15 @@ def create_players(salaries):
         for t in team_list:
             if team_name in t.get_names():
                 team = t
-        assert (team is not None), "The player's team should be in team_list"
         price = 0
         for player_dk in salaries:
-            if row[0] == player_dk[3]:
+            if row[0] == player_dk[2]:
                 price = row[5]
         if price != 0:
             opponent = figure_out_opponent(row[6][:7], row[7])
             factors = opponent.get_factors()
             avg_stats = [float(row[28]), float(row[22]), float(row[23]), float(row[24]),
-               float(row[25]), float(row[10]), float(row[26])]
+                         float(row[25]), float(row[10]), float(row[26])]
             proj_stats = multiply_lists(factors, avg_stats)
             proj_score = generate_projection(proj_stats)
             player_list.append(Player(row[0], team, row[1], float(row[6]), opponent,
@@ -268,15 +248,38 @@ def generate_projection(stats):
     return stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] \
                + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
 
-"""
-player_salaries = find_player_salaries(salaries_list)
-averages = assign_team_stats() 
+player_info = simple_get("https://www.basketball-reference.com/leagues/NBA_2019_per_game.html")
+player_info_list = BeautifulSoup(player_info, 'html.parser')
+
+team_defense = simple_get("http://www.espn.com/nba/statistics/team/_/stat/defense-per-game")
+team_defense_list = BeautifulSoup(team_defense, 'html.parser')
+
+team_rebounds = simple_get("http://www.espn.com/nba/statistics/team/_/stat/rebounds-per-game")
+team_rebounds_list = BeautifulSoup(team_rebounds, 'html.parser')
+
+team_miscellaneous = simple_get("http://www.espn.com/nba/statistics/team/_/stat/miscellaneous-per-game")
+team_misc_list = BeautifulSoup(team_miscellaneous, 'html.parser')
+
+team_possessions = simple_get("https://www.nbastuffer.com/2018-2019-nba-team-stats/")
+team_possessions_list = BeautifulSoup(team_possessions, 'html.parser')
+
+workbook = xlrd.open_workbook('DKSalaries.xls')
+'''DKSalaries.xls is a local file containing DraftKings salaries for the day'''
+salaries_list = workbook.sheet_by_index(0)
+
+"""player_salaries = find_player_salaries(salaries_list)"""
+averages = assign_team_stats()
 possessions_total=0
 for t in team_list:
     possessions_total += t.get_possessions()
 averages.append(float(possessions_total/30))
+print(averages)
 assign_team_factors(averages)
-create_players(player_salaries) """
+"""
+create_players(player_salaries)
+p=player_list[3]
+print(p.get_avg_stats())"""
+
 
 
 
