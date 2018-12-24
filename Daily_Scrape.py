@@ -244,6 +244,7 @@ def multiply_lists(lst1, lst2):
     Takes two equal-length lists which contain float values
     :return: list containing values in corresponding positions multiplied
     """
+    assert (len(lst1) == len(lst2)), "the two lists must have the same length"
 
 """
 player_salaries = find_player_salaries(salaries_list)
