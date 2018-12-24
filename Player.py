@@ -43,10 +43,10 @@ class Player:
         return self.price
     def set_price(self, price):
         self.price = price
-    def get_proj_points(self):
-        return self.proj_points
-    def set_proj_score(self, stats):
-        self.generate_projection(stats)
+    def get_proj_score(self):
+        return self.proj_score
+    def set_proj_score(self, proj_score):
+        self.proj_score = proj_score
     def generate_projection(self, stats):
         """
         Sets a player's projected points by taking in a list of projected stats and calculating their points using DraftKings rules:
@@ -64,5 +64,5 @@ class Player:
             doubles_bonus = 4.5
         elif double==2:
             doubles_bonus = 1.5
-        self.proj_score = stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
+        return stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
 
