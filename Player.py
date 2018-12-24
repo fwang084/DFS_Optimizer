@@ -9,7 +9,7 @@ class Player:
         self.avg_stats = avg_stats
         self.proj_stats = proj_stats
         self.price = price
-        self.proj_points = 0
+        self.proj_score = 0
         self.image = image
     def get_name(self):
         return self.name
