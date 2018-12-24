@@ -245,6 +245,10 @@ def multiply_lists(lst1, lst2):
     :return: list containing values in corresponding positions multiplied
     """
     assert (len(lst1) == len(lst2)), "the two lists must have the same length"
+    new_lst=[]
+    for i in range(len(lst1)):
+        new_lst.append(lst1[i]*lst2[i])
+    return new_lst
 
 """
 player_salaries = find_player_salaries(salaries_list)
