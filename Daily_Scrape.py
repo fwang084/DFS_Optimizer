@@ -187,7 +187,7 @@ def create_players(salaries):
         price = 0
         for player_dk in salaries:
             if row[0] == player_dk[2]:
-                price = row[5]
+                price = player_dk[5]
                 matchup = player_dk[6][:7]
                 positions = player_dk[0]
         if price != 0:
