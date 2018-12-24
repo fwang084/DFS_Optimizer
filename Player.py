@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, name, team, positions, minutes, opponent, avg_stats, proj_stats, price, image=None):
+    def __init__(self, name, team, positions, minutes, opponent, avg_stats, proj_stats, price, proj_score, image=None):
         self.name = name
         self.team = team
         self.positions = positions
@@ -9,7 +9,7 @@ class Player:
         self.avg_stats = avg_stats
         self.proj_stats = proj_stats
         self.price = price
-        self.proj_score = 0
+        self.proj_score = proj_score
         self.image = image
     def get_name(self):
         return self.name
