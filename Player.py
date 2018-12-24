@@ -47,22 +47,4 @@ class Player:
         return self.proj_score
     def set_proj_score(self, proj_score):
         self.proj_score = proj_score
-    def generate_projection(self, stats):
-        """
-        Sets a player's projected points by taking in a list of projected stats and calculating their points using DraftKings rules:
-        1pt per point, 1.25:assist, 1.5:rebound, 2:steal, 2:block, 0.5:3-pointer, -0.5:turnover
-        Additional bonus of 1.5 for a double-double and 3 for a triple-double
-        :param stats: list of: points, rebounds, assists, steals, blocks, 3s, turnovers
-        :return: None
-        """
-        doubles=0
-        doubles_bonus=0
-        for x in stats[:5]:
-            if x >= 10:
-                doubles+=1
-        if doubles>=3:
-            doubles_bonus = 4.5
-        elif double==2:
-            doubles_bonus = 1.5
-        return stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
 

@@ -218,7 +218,9 @@ def create_players(salaries):
             avg_stats = [float(row[28]), float(row[22]), float(row[23]), float(row[24]),
                float(row[25]), float(row[10]), float(row[26])]
             proj_stats = multiply_lists(factors, avg_stats)
-            player_list.append(Player(row[0], team, row[1], float(row[6]), opponent, avg_stats, proj_stats, price))
+            proj_score = generate_projection(proj_stats)
+            player_list.append(Player(row[0], team, row[1], float(row[6]), opponent,
+                                      avg_stats, proj_stats, proj_score, price))
 
 def figure_out_opponent(two_teams, own_team):
     """
@@ -249,6 +251,25 @@ def multiply_lists(lst1, lst2):
     for i in range(len(lst1)):
         new_lst.append(lst1[i]*lst2[i])
     return new_lst
+def generate_projection(stats):
+    """
+    Sets a player's projected points by taking in a list of projected stats and calculating their points
+    using DraftKings rules: 1pt per point, 1.25:assist, 1.5:rebound, 2:steal, 2:block, 0.5:3-pointer, -0.5:turnover
+    Additional bonus of 1.5 for a double-double and 3 for a triple-double
+    :param stats: list of: points, rebounds, assists, steals, blocks, 3s, turnovers
+    :return: None
+    """
+    doubles=0
+    doubles_bonus=0
+    for x in stats[:5]:
+        if x >= 10:
+            doubles += 1
+    if doubles >= 3:
+        doubles_bonus = 4.5
+    elif doubles == 2:
+        doubles_bonus = 1.5
+    return stats[0] + 1.25*stats[1] + 1.5*stats[2] + 2*stats[3] + 2*stats[4] \
+               + 0.5*stats[5] - 0.5*stats[6] + doubles_bonus
 
 """
 player_salaries = find_player_salaries(salaries_list)
