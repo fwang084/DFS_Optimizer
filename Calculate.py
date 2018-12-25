@@ -26,6 +26,15 @@ def optimal_lineup(remaining_players, lineup):
             if i is None:
                 return 0
         return lineup
+def lineup_score(players_chosen):
+    if players_chosen == 0:
+        return 0
+    else:
+        proj_score = 0
+        for p in players_chosen:
+            proj_score += p.get_proj_score()
+        return proj_score
+
 
 
 
