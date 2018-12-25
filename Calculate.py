@@ -21,9 +21,15 @@ def optimal_lineup(remaining_players, lineup):
     :param lineup: players that are already added to the lineup
     :return: list of players in the order [PG, SG, SF, PF, C, G, F, UTIL]
     """
+    total_salary = 0
+    for entry in lineup:
+        if entry is not None:
+            total_salary += entry.get_price()
+    if total_salary > 50000:
+        return 0
     if None not in lineup:
         return lineup
-    if remaining_players == []:
+    elif remaining_players == []:
         if None in lineup:
             return 0
         else:
@@ -130,7 +136,6 @@ def lineup_score(players_chosen):
             proj_score += p.get_proj_score()
         return proj_score
 
-"""optimal_lineup(player_list, [None, None, None, None, None, None, None, None])"""
 
 
 
