@@ -37,7 +37,7 @@ def optimal_lineup(remaining_players, lineup):
         for slot in slots:
             if lineup[slot] is None:
                 available_slots.append(slot)
-        return max([optimal_lineup(remaining_players[1:], lineup.insert(i, player)) for i in available_slots]
+        return max([optimal_lineup(remaining_players[1:], insert(lineup, i, player)) for i in available_slots]
                    + [optimal_lineup(remaining_players[1:], lineup)], key=lambda x: lineup_score(x))
 
 def position_converter(string_position):
@@ -105,6 +105,10 @@ def slot_converter(positions):
             slots.append(7)
     return slots
 
+def insert(lineup, slot, player):
+    lineup[slot]=player
+    return lineup
+
 def lineup_score(players_chosen):
     """
     Sums the projected scores of the players in a list
@@ -118,6 +122,8 @@ def lineup_score(players_chosen):
         for p in players_chosen:
             proj_score += p.get_proj_score()
         return proj_score
+
+"""optimal_lineup(player_list, [None, None, None, None, None, None, None, None])"""
 
 
 
