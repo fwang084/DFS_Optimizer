@@ -29,19 +29,9 @@ def optimal_lineup(remaining_players, lineup):
     else:
         player = remaining_players[0]
         string_position = player.get_positions()
-        positions = []
-        while string_position != '':
-            current_position = string_position[0]
-            position = string_position[1:]
-            if string_position == '':
-                positions.append(current_position)
-            elif string_position[0] == "/":
-                positions.append(current_position)
-                string_position = string_position[1:]
-            else:
-                current_position = current_position + string_position[0]
-                positions.append(current_position)
-                string_position = string_position[1:]
+        positions = position_converter(string_position)
+        slots = []
+
 
 def position_converter(string_position):
     """
@@ -65,6 +55,13 @@ def position_converter(string_position):
             positions.append(current_position)
             string_position = string_position[1:]
     return positions
+
+def slot_converter(positions):
+    """
+
+    :param positions:
+    :return:
+    """
 
 def lineup_score(players_chosen):
     """
