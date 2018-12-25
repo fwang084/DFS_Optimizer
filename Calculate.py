@@ -29,11 +29,8 @@ def optimal_lineup(remaining_players, lineup):
         return 0
     if None not in lineup:
         return lineup
-    elif remaining_players == []:
-        if None in lineup:
-            return 0
-        else:
-            return lineup
+    if remaining_players == []:
+        return 0
     else:
         player = remaining_players[0]
         string_position = player.get_positions()
@@ -43,8 +40,10 @@ def optimal_lineup(remaining_players, lineup):
         for slot in slots:
             if lineup[slot] is None:
                 available_slots.append(slot)
-        return max([optimal_lineup(remaining_players[1:], insert(lineup, i, player)) for i in available_slots]
-                   + [optimal_lineup(remaining_players[1:], lineup)], key=lambda x: lineup_score(x))
+        possible_lineups=[lineup]
+        for i in available_slots:
+            possible_lineups.append(insertion(lineup, i, player))
+        return max([optimal_lineup(remaining_players[1:], a) for a in possible_lineups], key=lambda x: lineup_score(x))
 
 def position_converter(string_position):
     """
@@ -111,7 +110,7 @@ def slot_converter(positions):
             slots.append(7)
     return slots
 
-def insert(lineup, slot, player):
+def insertion(lineup, slot, player):
     """
     Inserts a player into a slot in a lineup
     :param lineup: DraftKings lineup
@@ -119,8 +118,9 @@ def insert(lineup, slot, player):
     :param player: Player object to be entered into lineup
     :return: the new lineup with the Player object entered
     """
-    lineup[slot]=player
-    return lineup
+    new_lineup = lineup[:]
+    new_lineup[slot]=player
+    return new_lineup
 
 def lineup_score(players_chosen):
     """
@@ -135,6 +135,8 @@ def lineup_score(players_chosen):
         for p in players_chosen:
             proj_score += p.get_proj_score()
         return proj_score
+
+
 
 
 
