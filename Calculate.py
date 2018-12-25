@@ -26,6 +26,41 @@ def optimal_lineup(remaining_players, lineup):
             if i is None:
                 return 0
         return lineup
+    else:
+        player = remaining_players[0]
+        string_position = player.get_positions()
+        positions = []
+        while string_position != '':
+            current_position = string_position[0]
+            position = string_position[1:]
+            if string_position == '':
+                positions.append(current_position)
+            elif string_position[0] == "/":
+                positions.append(current_position)
+                string_position = string_position[1:]
+            else:
+                current_position = current_position + string_position[0]
+                positions.append(current_position)
+                string_position = string_position[1:]
+
+def position_converter(string_position):
+    positions = []
+    while string_position != '':
+        if string_position[0] == "/":
+            string_position = string_position[1:]
+        current_position = string_position[0]
+        string_position = string_position[1:]
+        if string_position == '':
+            positions.append(current_position)
+        elif string_position[0] == "/":
+            positions.append(current_position)
+            string_position = string_position[1:]
+        else:
+            current_position = current_position + string_position[0]
+            positions.append(current_position)
+            string_position = string_position[1:]
+    return positions
+
 def lineup_score(players_chosen):
     """
     Sums the projected scores of the players in a list
@@ -39,6 +74,9 @@ def lineup_score(players_chosen):
         for p in players_chosen:
             proj_score += p.get_proj_score()
         return proj_score
+
+
+
 
 
 
