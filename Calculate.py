@@ -44,6 +44,11 @@ def optimal_lineup(remaining_players, lineup):
                 string_position = string_position[1:]
 
 def position_converter(string_position):
+    """
+    Converts a string representing DraftKings position eligibility into a Python list
+    :param string_position: DraftKings position eligibility (ex. 'PG/SG')
+    :return: list consisting of eligible positions (ex. ['PG', 'SG'])
+    """
     positions = []
     while string_position != '':
         if string_position[0] == "/":
