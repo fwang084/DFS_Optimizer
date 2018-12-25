@@ -27,6 +27,11 @@ def optimal_lineup(remaining_players, lineup):
                 return 0
         return lineup
 def lineup_score(players_chosen):
+    """
+    Sums the projected scores of the players in a list
+    :param players_chosen: either 0 or a list representing a DraftKings lineup
+    :return: Projected score of the lineup
+    """
     if players_chosen == 0:
         return 0
     else:
