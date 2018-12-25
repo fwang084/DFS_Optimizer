@@ -106,6 +106,13 @@ def slot_converter(positions):
     return slots
 
 def insert(lineup, slot, player):
+    """
+    Inserts a player into a slot in a lineup
+    :param lineup: DraftKings lineup
+    :param slot: slot number for player to be entered into
+    :param player: Player object to be entered into lineup
+    :return: the new lineup with the Player object entered
+    """
     lineup[slot]=player
     return lineup
 
