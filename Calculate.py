@@ -58,9 +58,9 @@ def position_converter(string_position):
 
 def slot_converter(positions):
     """
-
-    :param positions:
-    :return:
+    Returns the lineup slot numbers that a player with given position eligibility can be inserted into
+    :param positions: Python list of positions represented by strings
+    :return: list of corresponding slot numbers
     """
 
 def lineup_score(players_chosen):
