@@ -19,7 +19,7 @@ def optimal_lineup(remaining_players, lineup):
     Tree recursive method to find the optimal lineup given a player budget of $50000
     :param remaining_players: players that can still be added to the lineup
     :param lineup: players that are already added to the lineup
-    :return: list of players in the order [PG, SG, G, SF, PF, F, C, UTIL]
+    :return: list of players in the order [PG, SG, SF, PF, C, G, F, UTIL]
     """
     if remaining_players == []:
         for i in lineup:
@@ -62,6 +62,41 @@ def slot_converter(positions):
     :param positions: Python list of positions represented by strings
     :return: list of corresponding slot numbers
     """
+    slots = []
+    if 'PG' in positions:
+        if 0 not in slots:
+            slots.append(0)
+        if 5 not in slots:
+            slots.append(5)
+        if 7 not in slots:
+            slots.append(7)
+    if 'SG' in positions:
+        if 1 not in slots:
+            slots.append(1)
+        if 5 not in slots:
+            slots.append(5)
+        if 7 not in slots:
+            slots.append(7)
+    if 'SF' in positions:
+        if 2 not in slots:
+            slots.append(2)
+        if 6 not in slots:
+            slots.append(6)
+        if 7 not in slots:
+            slots.append(7)
+    if 'PF' in positions:
+        if 3 not in slots:
+            slots.append(3)
+        if 6 not in slots:
+            slots.append(6)
+        if 7 not in slots:
+            slots.append(7)
+    if 'C' in positions:
+        if 4 not in slots:
+            slots.append(4)
+        if 7 not in slots:
+            slots.append(7)
+    return slots
 
 def lineup_score(players_chosen):
     """
