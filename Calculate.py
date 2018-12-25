@@ -13,5 +13,10 @@ def find_best_value():
     :return: A list of 40 tuples, with each tuple consisting of player name and 1000 * proj_score/price
     """
     print(conn.execute("SELECT name, 1000 * proj_score/price FROM daily_players ORDER BY -proj_score/price LIMIT 40;").fetchall())
-find_best_value()
+
+def optimal_lineup():
+    """
+    Tree recursive method to find the optimal lineup given a player budget of $50000
+    :return: list of players in the order [PG, SG, G, SF, PF, F, C, UTIL]
+    """
 
