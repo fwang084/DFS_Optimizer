@@ -21,16 +21,21 @@ def optimal_lineup(remaining_players, lineup):
     :param lineup: players that are already added to the lineup
     :return: list of players in the order [PG, SG, SF, PF, C, G, F, UTIL]
     """
-    if remaining_players == []:
-        for i in lineup:
-            if i is None:
-                return 0
+    if None not in lineup:
         return lineup
+    if remaining_players == []:
+        if None in lineup:
+            return 0
+        else:
+            return lineup
     else:
         player = remaining_players[0]
         string_position = player.get_positions()
         positions = position_converter(string_position)
-        slots = []
+        slots = slot_converter(positions)
+        for slot in slots:
+
+
 
 
 def position_converter(string_position):
@@ -111,7 +116,6 @@ def lineup_score(players_chosen):
         for p in players_chosen:
             proj_score += p.get_proj_score()
         return proj_score
-
 
 
 
