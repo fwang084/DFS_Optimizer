@@ -136,6 +136,16 @@ def lineup_score(players_chosen):
             proj_score += p.get_proj_score()
         return proj_score
 
+new_player_list=[]
+"""player_list filtered below"""
+for player in player_list:
+    if player.get_price()>4000 and player.get_proj_score()/player.get_price()>0.00485:
+        if player.get_name() not in ['Caris LeVert', 'Will Barton', 'Kevin Love']:
+            new_player_list.append(player)
+best = optimal_lineup(new_player_list, [None, None, None, None, None, None, None, None])
+for p in best:
+    print(p.get_name())
+
 
 
 
