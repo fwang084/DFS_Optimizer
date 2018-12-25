@@ -33,10 +33,12 @@ def optimal_lineup(remaining_players, lineup):
         string_position = player.get_positions()
         positions = position_converter(string_position)
         slots = slot_converter(positions)
+        available_slots = []
         for slot in slots:
-
-
-
+            if lineup[slot] is None:
+                available_slots.append(slot)
+        return max([optimal_lineup(remaining_players[1:], lineup.insert(i, player)) for i in available_slots]
+                   + [optimal_lineup(remaining_players[1:], lineup)], key=lambda x: lineup_score(x))
 
 def position_converter(string_position):
     """
