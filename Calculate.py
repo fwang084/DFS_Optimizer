@@ -22,9 +22,14 @@ def optimal_lineup(remaining_players, lineup):
     :return: list of players in the order [PG, SG, SF, PF, C, G, F, UTIL]
     """
     total_salary = 0
-    for entry in lineup:
-        if entry is not None:
-            total_salary += entry.get_price()
+    for spot in lineup:
+        if spot is not None:
+            if isinstance(spot, str):
+                for player in player_list:
+                    if player.get_name() == spot:
+                        total_salary += player.get_price()
+            else:
+                total_salary += spot.get_price()
     if total_salary > 50000:
         return 0
     if None not in lineup:
@@ -140,9 +145,9 @@ new_player_list=[]
 """player_list filtered below"""
 for player in player_list:
     if player.get_price()>4000 and player.get_proj_score()/player.get_price()>0.00485:
-        if player.get_name() not in ['Caris LeVert', 'Will Barton', 'Kevin Love']:
+        if player.get_name() not in ['Caris LeVert', 'Will Barton', 'Kevin Love', 'Eric Bledsoe']:
             new_player_list.append(player)
-best = optimal_lineup(new_player_list, [None, None, None, None, None, None, None, None])
+best = optimal_lineup(new_player_list, ['Eric Bledsoe', None, None, None, None, None, None, None])
 for p in best:
     print(p.get_name())
 
