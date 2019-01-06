@@ -8,5 +8,5 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Cloning
 
-
+- Clone this repository to your local machine using https://github.com/fwang084/DFS_Optimizer
 
