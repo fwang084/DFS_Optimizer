@@ -60,8 +60,8 @@ $ pip install xlrd
 
 ## FAQ
 
-- **How do I do *specifically* so and so?**
-    - No problem! Just do this.
+- **How should the optimal_lineup function in Calculate be used?**
+    - First, decide which players are "locked in", meaning that they must be included. Pass in a player list and a list that represents a lineup, with locked players represented by their name as a string in the appropriate position in the lineup. An example is given in lines 150-152 of Calculate.py.
 
 ---
 
