@@ -18,4 +18,22 @@ These instructions will get you a copy of the project up and running on your loc
 $ easy_install pip
 ```
 
+> Install BeautifulSoup
+
+```shell
+$ pip install BeautifulSoup4
+```
+
+> Install requests library
+
+```shell
+$ pip install requests
+```
+
+> Install xlrd module
+
+```shell
+$ pip install xlrd
+```
+
 
