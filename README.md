@@ -40,8 +40,6 @@ $ pip install xlrd
 ---
 ## Contributing
 
-> To get started...
-
 ### Step 1
 
 - **Option 1**
