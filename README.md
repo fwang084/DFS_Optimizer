@@ -61,7 +61,10 @@ $ pip install xlrd
 ## FAQ
 
 - **How should the optimal_lineup function in Calculate be used?**
-    - First, decide which players are "locked in", meaning that they must be included. Pass in a player list and a list that represents a lineup, with locked players represented by their name as a string in the appropriate position in the lineup. An example is given in lines 150-152 of Calculate.py.
+    - First, decide which players are "locked in", meaning that they must be included. Pass in a player list and a list that represents a lineup, with locked players represented by their name as a string in the appropriate position in the lineup. An example is given in lines 150-152 of Calculate.py .
+
+- **How long does the optimal_lineup function take?**
+    - The algorithm takes significantly shorter time if many locked players are provided. Otherwise, there are too many cases, and the program's runtime will be too long. Depending on how big the player pool is on a day, increasing the number of locked players or filtering the player list before passing it into optimal_lineup can reduce runtime to an adequate time.
 
 ---
 
