@@ -58,6 +58,13 @@ $ pip install xlrd
 
 ---
 
+## FAQ
+
+- **How do I do *specifically* so and so?**
+    - No problem! Just do this.
+
+---
+
 ## Support
 
 - Contact me at frankw084@berkeley.edu
