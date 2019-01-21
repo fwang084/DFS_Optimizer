@@ -124,7 +124,7 @@ def insertion(lineup, slot, player):
     :return: the new lineup with the Player object entered
     """
     new_lineup = lineup[:]
-    new_lineup[slot]=player
+    new_lineup[slot] = player
     return new_lineup
 
 def lineup_score(players_chosen):
@@ -137,19 +137,30 @@ def lineup_score(players_chosen):
         return 0
     else:
         proj_score = 0
-        for p in players_chosen:
-            proj_score += p.get_proj_score()
+        for chosen in players_chosen:
+            if isinstance(chosen, str):
+                for p in player_list:
+                    if p.get_name() == chosen:
+                        proj_score += p.get_proj_score()
+            else:
+                proj_score += chosen.get_proj_score()
         return proj_score
 
 new_player_list=[]
 """player_list filtered below"""
 for player in player_list:
-    if player.get_price()>4000 and player.get_proj_score()/player.get_price()>0.00485:
-        if player.get_name() not in ['Caris LeVert', 'Will Barton', 'Kevin Love', 'Eric Bledsoe']:
+    if player.get_price() > 4000 and player.get_proj_score()/player.get_price() > 0.0045:
+        if player.get_name() not in ['Tobias Harris', 'Devin Booker', 'Kevin Love', 'Dragan Bender',
+                                     'Karl-Anthony Towns']:
             new_player_list.append(player)
-best = optimal_lineup(new_player_list, ['Eric Bledsoe', None, None, None, None, None, None, None])
+best = optimal_lineup(new_player_list, [None, 'Devin Booker', 'Tobias Harris', 'Dragan Bender', 'Karl-Anthony Towns',
+                                        None, None, None])
 for p in best:
-    print(p.get_name())
+    if isinstance(p, str):
+        print(p)
+    else:
+        print(p.get_name())
+
 
 
 

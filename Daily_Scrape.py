@@ -188,7 +188,7 @@ def create_players(salaries):
         for player_dk in salaries:
             if row[0] == player_dk[2]:
                 price = player_dk[5]
-                matchup = player_dk[6][:7]
+                matchup = player_dk[6]
                 positions = player_dk[0]
         if price != 0:
             opponent = figure_out_opponent(matchup, team.get_names()[0])
@@ -197,6 +197,7 @@ def create_players(salaries):
                          float(row[25]), float(row[10]), float(row[26])]
             proj_stats = multiply_lists(factors, avg_stats)
             proj_score = generate_projection(proj_stats)
+            print(row[0])
             player_list.append(Player(row[0], team, positions, float(row[6]), opponent,
                                       avg_stats, proj_stats, price, proj_score))
 
@@ -208,13 +209,21 @@ def figure_out_opponent(two_teams, own_team):
     :param own_team: string representing one team (ex. 'GSW')
     :return: the Team instance representing the other team
     """
-    assert (len(two_teams) == 7), "two_teams should have the form 'CLE@GSW'"
-    assert (two_teams[3] == '@'), "two_teams should have the form 'CLE@GSW'"
-    assert (len(own_team) == 3), "one_team should have the form GSW"
-    if two_teams[:3] == own_team:
-        team_to_return = two_teams[4:]
+    first_team = ''
+    if own_team == 'SAS':
+        own_team = 'SA'
+    current = 0
+    while two_teams[current] != '@':
+        first_team += two_teams[current]
+        current += 1
+    if first_team == own_team:
+        current += 1
+        team_to_return = ''
+        while two_teams[current] != ' ':
+            team_to_return += two_teams[current]
+            current += 1
     else:
-        team_to_return = two_teams[:3]
+        team_to_return = first_team
     for t in team_list:
         if team_to_return in t.get_names():
             return t
