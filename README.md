@@ -67,7 +67,7 @@ $ pip install xlrd
     - The algorithm takes significantly shorter time if many locked players are provided. Otherwise, there are too many cases, and the program's runtime will be too long. Depending on how big the player pool is on a day, increasing the number of locked players or filtering the player list before passing it into optimal_lineup can reduce runtime to an adequate time.
     
 - **What do I do if I want find_best_value() to return more or less than 40 players?**
-    - 40 works well for me, but simply change the number after LIMIT within the find_best_value function if you want a different number of players.
+    - 40 is usually found to be sufficient, but simply change the number after LIMIT within the find_best_value function if you want a different number of players.
 
 ---
 
